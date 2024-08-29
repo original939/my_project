@@ -1,0 +1,13 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t todo_app .
+
+deploy:
+  stage: deploy
+  script:
+    - docker-compose up -d
